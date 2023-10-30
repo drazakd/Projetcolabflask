@@ -1,9 +1,9 @@
-from flask import Flask,render_template, request
-from flask import LoginManager, login_user, login_required, logout_user, UserMixin, current_user
+from flask import Flask,url_for,render_template,request,flash,redirect
+import sqlite3
 
 app=Flask(__name__)#montre le nom (app) de notre application a flask
 
-
+#les routes sont les chemin qui vont nous permettre d afficher notre page elle se font grace a @nomdelapp.route("/") / pour la route
 
 @app.route("/") #page principale pour specifier le chemin
 def connexion(): #nom de la fontion
@@ -61,18 +61,18 @@ def produit():
   Traite les données du formulaire de produit.
   """
   # Récupère les données du formulaire.
-  nom = request.form["nom"]
-  description = request.form["description"]
-  stockactuel = request.form["stockactuel"]
-  prixunitaire = request.form["prixunitaire"]
+#   nom = request.form["nom"]
+#   description = request.form["description"]
+#   stockactuel = request.form["stockactuel"]
+#   prixunitaire = request.form["prixunitaire"]
 
   # Insère les données dans un tableau.
-  produit = {
-    "nom": nom,
-    "description": description,
-    "stockactuel": stockactuel,
-    "prixunitaire": prixunitaire,
-  }
+#   produit = {
+#     "nom": nom,
+#     "description": description,
+#     "stockactuel": stockactuel,
+#     "prixunitaire": prixunitaire,
+#   }
 
   # Crée la sortie HTML de la page produit.
   return render_template("produit.html", produit=produit)
