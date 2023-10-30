@@ -1,10 +1,9 @@
 from flask import Flask,render_template, request
 from flask import LoginManager, login_user, login_required, logout_user, UserMixin, current_user
-from flask import Bootstrap
 
 app=Flask(__name__)#montre le nom (app) de notre application a flask
 
-#les routes sont les chemin qui vont nous permettre d afficher notre page elle se font grace a @nomdelapp.route("/") / pour la route
+
 
 @app.route("/") #page principale pour specifier le chemin
 def connexion(): #nom de la fontion
